@@ -13,12 +13,12 @@ func Game(r io.Reader, w io.Writer, words []string, t time.Duration) (int, error
 	limit := time.After(t)
 	rand.Seed(int64(time.Now().UnixNano()))
 
-	_, err := fmt.Fprintf(w, "start typing game.\ntype the word")
+	_, err := fmt.Fprintf(w, "start typing game.\ntype the word!\n")
 	if err != nil {
 		return -1, err
 	}
 
-	_, err = fmt.Fprintf(w, "time limit is %d\n", int(t.Seconds()))
+	_, err = fmt.Fprintf(w, "time limit is %dsec\n", int(t.Seconds()))
 	if err != nil {
 		return -1, err
 	}
