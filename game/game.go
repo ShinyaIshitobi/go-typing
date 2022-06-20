@@ -43,7 +43,7 @@ func Game(r io.Reader, w io.Writer, words []string, t time.Duration) (int, error
 				fmt.Fprintf(w, "missed!\n")
 			}
 		case <-limit:
-			_, err = fmt.Fprintf(w, "\n>> game ends! the number of correct answer: %d", score)
+			_, err = fmt.Fprintf(w, "\ngame ends! the number of correct answer: %d", score)
 			if err != nil {
 				return -1, err
 			}
